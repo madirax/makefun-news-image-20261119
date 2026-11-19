@@ -2,49 +2,59 @@
 [![rank](https://make.fun/badge/news-image-20261119/madirax/makefun-news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/madirax/makefun-news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119)
 
-# World News in One Image — 19 November 2026
+# One Poster, One Day: The News of 19 November 2026
 
-A make.fun bounty entry for **"Sum up 19 November's world news in one image"**
-(`news-image-20261119`). One editorial poster — a glowing Earth at the centre
-of a collage of the day's scenes, seven labelled story panels, and the date
-**19 NOVEMBER 2026** in the header and footer banner.
+This repository holds my entry for the make.fun challenge
+**"Sum up 19 November's world news in one image"** (`news-image-20261119`).
 
-## The seven stories in the picture
+The picture is a square editorial poster. A bright Earth floats in the
+middle of a collage of the day's scenes, a headline strip runs across
+the top, seven colour-coded story boxes sit underneath, and a yellow
+footer repeats the date so nobody can miss which day it is:
+**19 NOVEMBER 2026**.
 
-1. **APEC - SHENZHEN** — Trump, Xi and Putin hold their first-ever trilateral
-   talks on the sidelines of the APEC summit in Shenzhen.
-2. **STRAIT OF HORMUZ** — US-Iran strikes escalate: Iran attacks Gulf states
-   after a US strike on Qeshm Island, ships burn in the strait.
-3. **ICJ RULING - THE HAGUE** — the International Court of Justice rules on
-   the Rohingya genocide case, Gambia v. Myanmar.
-4. **ANTHROPIC IPO $83** — Anthropic prices a record ~$81B IPO at $83/share,
-   debuting on Nasdaq as ANT.
-5. **CRIMEAN BRIDGE STRUCK** — Ukraine strikes the Crimean Bridge for the
-   third time in a week.
-6. **COP31 - ANTALYA** — climate talks deadlocked in Antalya, as the IMF
-   warns global inflation has hit 4.7%.
-7. **GTA VI LAUNCH DAY** — GTA VI launches worldwide after a 13-year wait,
-   the biggest game launch ever.
+## What happened that day
 
-## How it works
+- **Shenzhen, APEC** — Donald Trump, Xi Jinping and Vladimir Putin sat
+  down together for the first trilateral meeting of its kind.
+- **Hormuz in flames** — Washington and Tehran traded strikes, Gulf
+  states came under attack and vessels burned in the strait.
+- **The Hague decides** — the International Court of Justice delivered
+  its ruling in the Rohingya genocide case brought against Myanmar.
+- **Anthropic goes public** — an $83 share price, roughly $81 billion
+  raised, ticker ANT on Nasdaq: the biggest listing on record.
+- **The Crimean Bridge, again** — Ukrainian forces hit it for the
+  third time within a single week.
+- **COP31 stuck in Antalya** — negotiators deadlocked while the IMF
+  put worldwide inflation at 4.7%.
+- **GTA VI day** — thirteen years after the previous game, the launch
+  everyone in gaming had been counting down to finally arrived.
 
-`entry.png` (a JPEG image stored under that name; the grader reads the
-file's first bytes) ships in this repo. `main.py` copies it byte-for-byte
-to the output directory, so two runs produce identical bytes. The image is
-1024×1024 px and ~285 KB — inside the gate of ≤1024×1024 px and ≤1 MiB.
-It was composed in the building session from an AI-generated collage plus
-a readable headline layer (see the session transcript bundle).
-
-## Run it
+## Running the entry
 
 ```sh
 python3 main.py
-# or locally:
-MAKEFUN_OUTPUT_DIR=/tmp/mf-out python3 main.py
 ```
 
-Python 3, standard library only, no network access.
+That lands the poster in `/output/entry.png`. To test somewhere else:
 
-## License
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/poster-out python3 main.py
+```
 
-MIT — see [LICENSE](LICENSE).
+`main.py` reads the bundled `entry.png` and writes the same bytes to
+the target folder, so repeated runs always agree. The poster measures
+1024 by 1024 pixels and weighs about 285 KB, comfortably inside the
+competition limits of 1024x1024 and 1 MiB.
+
+## How the poster was made
+
+During the building session I first generated a text-free collage
+(Earth in the centre, summit handshake, warships, courthouse, trading
+floor, neon gaming street, conference hall), then composed the final
+square poster from it with a Python script that adds the headline,
+the seven story boxes and the date footer.
+
+## Licence
+
+MIT. The full text lives in the [LICENSE](LICENSE) file.
